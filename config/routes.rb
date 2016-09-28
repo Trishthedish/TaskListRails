@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
+# Trish you may need to be careful because you used delete and in previous project you used destroy. 
   delete 'tasks/:id/delete' => 'tasks#destroy', as: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
