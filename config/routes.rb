@@ -6,17 +6,17 @@ Rails.application.routes.draw do
 #apparently the syntax used in previous project aren't necessary. but its helpful.
 # when you're going to manipulate it it needs to happen before. If its just showing it. put id after.
 
-  get 'tasks/show/:id', 'tasks#show', as: 'show'
+  get 'tasks/show/:id' => 'tasks#show', as: 'show'
 
   get 'tasks/new', as: 'new'
 
-  get 'tasks/create', as: 'create'
+  post 'tasks/create', as: 'create'
 
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  get 'tasks/:id/update' => 'tasks#update', as: 'update'
+  put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
-  get 'tasks/:id/delete' => 'tasks#destroy', as: 'delete'
+  delete 'tasks/:id/delete' => 'tasks#destroy', as: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
