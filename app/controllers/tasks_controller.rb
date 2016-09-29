@@ -9,8 +9,8 @@ class TasksController < ApplicationController
     @mytask = nil
 
     @tasks.each do |task|
-      @number = params[:id].to_i
-      if task[:id] == @number
+      number = params[:id].to_i
+      if task[:id] == number
         @mytask = task
       end
     end
@@ -42,10 +42,10 @@ class TasksController < ApplicationController
 
   def self.alltasks
     [
-      {id:1, name:"clean", description: "clean fridge", completion_status: false, completed_at: nil},
-      {id:2, name: "tidy", description:"shoe closet", completed_at: nil},
-      {id:3, name: "feed", description:"feed the dog", completed_at: nil}
+      {id:1, title:"clean", description: "clean fridge", completed_at: true},
+      {id:2, title: "tidy", description:"shoe closet", completed_at: false},
+      {id:3, title: "feed", description:"feed the dog", completed_at: nil}
     ]
-  end 
+  end
 
 end
