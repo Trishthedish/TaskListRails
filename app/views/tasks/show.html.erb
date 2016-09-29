@@ -8,4 +8,5 @@
   <li>Completion Status: <%=@mytask.completed_at%></li>
 </ul>
 <%= button_to "delete", delete_path(@mytask), {:method => :delete } %>
+<%= button_to "edit", edit_path(@mytask), {:method => :get}  %>
 </article>

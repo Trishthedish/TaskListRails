@@ -73,3 +73,17 @@ http://masteruby.github.io/weekly-rails/2014/04/04/how-to-create-todo-list-app-i
 
 
 https://www.railstutorial.org/book/updating_and_deleting_users
+
+    # redirect_to action: 'show', id: @mytask.id
+
+    @tasks.each do |task|
+      number = params[:id].to_i
+      if task[:id] == number
+        @mytask = task
+      end
+    end
+    if @mytask == nil
+      render :file => 'public/404.html',
+      :status => :note_found
+    end
+  end

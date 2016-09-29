@@ -22,22 +22,14 @@ class TasksController < ApplicationController
     @mytask.description = params[:task][:description]
     @mytask.completed_at = params[:task][:completed_at]
     @mytask.save
-    redirect_to action: 'show', id: @mytask.id
+    redirect_to tasks_path
   end
 
   def edit
-    @tasks = TasksController.alltasks
-    @mytask = nil
-
-    @tasks.each do |task|
-      number = params[:id].to_i
-      if task[:id] == number
-        @mytask = task
-      end
-    end
+    @tasks = Task.find(params[:id])
     if @mytask == nil
       render :file => 'public/404.html',
-      :status => :note_found
+      :status => :not_found
     end
   end
 
