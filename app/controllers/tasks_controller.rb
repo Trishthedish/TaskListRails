@@ -1,19 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = TasksController.alltasks
-    # @Task.all
+    @tasks = Task.all
   end
 
   def show
-    @tasks = TasksController.alltasks
-    @mytask = nil
-
-    @tasks.each do |task|
-      number = params[:id].to_i
-      if task[:id] == number
-        @mytask = task
-      end
-    end
+    @mytask = Task.find(params[:id])
     if @mytask == nil
       render :file => 'public/404.html',
       :status => :not_found
@@ -26,27 +17,40 @@ class TasksController < ApplicationController
 
   def create
     @params = params
-    @title = params["title"]
-    @description = params["description"]
-    @completed_at = params["completed_at"]
+    @mytask = Task.new
+    @mytask.title = params[:task][:title]
+    @mytask.description = params[:task][:description]
+    @mytask.completed_at = params[:task][:completed_at]
+    @mytask.save
+    redirect_to action: 'show', id: @mytask.id
   end
 
   def edit
+    @tasks = TasksController.alltasks
+    @mytask = nil
+
+    @tasks.each do |task|
+      number = params[:id].to_i
+      if task[:id] == number
+        @mytask = task
+      end
+    end
+    if @mytask == nil
+      render :file => 'public/404.html',
+      :status => :note_found
+    end
   end
 
   def update
 
   end
 
-  def delete
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path
+    flash[:alert] = "task deleted"
   end
 
-  def self.alltasks
-    [
-      {id:1, title:"clean", description: "clean fridge", completed_at: true},
-      {id:2, title: "tidy", description:"shoe closet", completed_at: false},
-      {id:3, title: "feed", description:"feed the dog", completed_at: nil}
-    ]
-  end
 
 end

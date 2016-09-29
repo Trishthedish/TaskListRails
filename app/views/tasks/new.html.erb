@@ -1,17 +1,10 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
-
-<!-- <form name="new-task" action="create" method="post">
-  <label for="title">Title</label>
-
-</form> -->
-
-<%=form_for @task do |t| %>
+<h1>Enter your newest task, friend!!</h1>
+<%=form_for @task, url: {action: 'create'},html: {class:"nifty-form"} do |t| %>
 <%= t.label :title %>
 <%= t.text_field :title %>
 <%= t.label :description %>
 <%= t.text_field :description %>
 <%= t.label :completed_at %>
 <%= t.text_field :completed_at %>
-<%= t.submit %>
+<%= t.submit "Add Task" %>
 <% end %>
