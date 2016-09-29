@@ -1,9 +1,9 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
-
+<h1>Task Details</h1>
 
 <article>
-  <h1><%=@mytask[:title]%></h1>
-  <h2><%=@mytask[:description]%></h2>
-  <p><%=@mytask[:completed_at]%></p>
-</article>
+<ul>
+  <li>Task Id: <%=@mytask[:id]%></li>
+  <li>Task Title: <%=@mytask[:title]%></li>
+  <li>Task Description: <%=@mytask[:description]%></li>
+  <li>Completion Status: <%=@mytask[:completed_at]%></li>
+</ul>

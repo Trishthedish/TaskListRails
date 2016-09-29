@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'tasks#index'
-
-  get 'tasks/index' , as: 'index'
+# changed this to index to tasks. NEEED FOLLOW UP!?
+  get 'tasks/index' , as: 'tasks'
 
 #apparently the syntax used in previous project aren't necessary. but its helpful.
 # when you're going to manipulate it it needs to happen before. If its just showing it. put id after.
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
-# Trish you may need to be careful because you used delete and in previous project you used destroy. 
+# Trish you may need to be careful because you used delete and in previous project you used destroy.
   delete 'tasks/:id/delete' => 'tasks#destroy', as: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -26,3 +26,8 @@ bin/rails generate controller tasks index show new create edit update delete
 4. look at routes and begin using http verbs
 add this to top if you wanted root page to be
   root to: 'tasks#index'
+
+
+---
+
+5. rails generate model
