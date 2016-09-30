@@ -36,8 +36,9 @@ class TasksController < ApplicationController
 # this method was created && may not work.
   def update
     @mytask = Task.find(params[:id])
-    if @task.update(params)
-      redirect_to(@task)
+    if @mytask.update({title: params[:task][:title], description: params[:task][:description], completed_at: params[:task][:completed_at]})
+      # redirect_to(@mytask)}
+      redirect_to tasks_path
     else
       render "edit"
     end

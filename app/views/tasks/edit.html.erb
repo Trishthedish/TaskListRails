@@ -2,7 +2,7 @@
 <h1>Edit a post you must?</h1>
 <article>
 
-  <%=form_for @task, url: {controller: 'edit', action: "create"} do |t| %>
+  <%=form_for @tasks, url: {controller: 'tasks', action: "edit"} do |t| %>
     <%= t.label :title %>
     <%= t.text_field :title %>
 
@@ -11,11 +11,12 @@
 
     <%= t.label :completed_at %>
     <%= t.text_field :completed_at %>
+    <%= t.hidden_field :id %>
 
     <%= t.submit "Edit Task" %>
   <% end %>
 
-  <%= button_to "delete", delete_path(@mytask), {:method => :delete } %>
-  <%= button_to "edit", edit_path(@mytask), {:method => :get}  %>
+  <%= button_to "delete", delete_path(@tasks), {:method => :delete } %>
+  <%= button_to "edit", edit_path(@tasks), {:method => :get}  %>
 
 </article>

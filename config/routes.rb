@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  put 'tasks/:id/update' => 'tasks#update', as: 'update'
+  post 'tasks/:id/edit' => 'tasks#update', as: 'update'
+
+  patch 'tasks/:id/edit' => 'tasks#update', as: 'updates'
 
 # Trish you may need to be careful because you used delete and in previous project you used destroy.
   delete 'tasks/:id/delete' => 'tasks#destroy', as: 'delete'
