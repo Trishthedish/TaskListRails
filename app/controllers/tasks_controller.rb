@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def edit
     @tasks = Task.find(params[:id])
-    if @mytask == nil
+    if @tasks == nil
       render :file => 'public/404.html',
       :status => :not_found
     end
