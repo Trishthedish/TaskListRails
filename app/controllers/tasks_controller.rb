@@ -33,8 +33,14 @@ class TasksController < ApplicationController
     end
   end
 
+# this method was created && may not work.
   def update
-
+    @mytask = Task.find(params[:id])
+    if @task.update(params)
+      redirect_to(@task)
+    else
+      render "edit"
+    end
   end
 
   def destroy

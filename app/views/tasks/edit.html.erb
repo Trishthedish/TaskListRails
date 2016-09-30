@@ -1,28 +1,21 @@
 <h1>Tasks#edit</h1>
-<% @tasks.each do |task|  %>
-<article>
-<%=  %>
-
 <h1>Edit a post you must?</h1>
-
-<form action="edit-post" action="edit" method="edit">
-  <label for="title">Title:</label>
-  <input type="text" name="title" id="title">
-
-  <label for="description"></label>
-  <input type="text" name="description" id="description">
-
-  <label for="completed_at"></label>
-</form>
-
-
 <article>
-<ul>
-  <li>Task Id: <%=@mytask.id %></li>
-  <li>Task Title: <%=@mytask.title%></li>
-  <li>Task Description: <%=@mytask.description%></li>
-  <li>Completion Status: <%=@mytask.completed_at%></li>
-</ul>
-<%= button_to "delete", delete_path(@mytask), {:method => :delete } %>
-<%= button_to "edit", edit_path(@mytask), {:method => :get}  %>
+
+  <%=form_for @task, url: {controller: 'edit', action: "create"} do |t| %>
+    <%= t.label :title %>
+    <%= t.text_field :title %>
+
+    <%= t.label :description %>
+    <%= t.text_field :description %>
+
+    <%= t.label :completed_at %>
+    <%= t.text_field :completed_at %>
+
+    <%= t.submit "Edit Task" %>
+  <% end %>
+
+  <%= button_to "delete", delete_path(@mytask), {:method => :delete } %>
+  <%= button_to "edit", edit_path(@mytask), {:method => :get}  %>
+
 </article>
