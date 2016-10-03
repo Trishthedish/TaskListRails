@@ -1,3 +1,18 @@
+## Homework Review
+Reflection
+- What went well?
+As I near the end of my WAVE3 requirements. I feel proud of how I've grown to understand the relationships between all of the Rails documents. I now know how to connect and use my routes properly.
+- What are you still working on understanding
+better?
+I drew out a map of what I wanted in my finished product. I wasn't sure how to add a checkbox in my views- that would then connect to my completed_at logic. I see now that I could probably insert a button that has logic tied to it when it should displayed. As in, display edit, delete, task only when task isn't completed. I also haven't really touched or worked on improving the look and feel of this assignment. I wanted to make sure I hit all of my requirements before working on changing any CSS. I can also see where has_many relationships discussed in ERD video may be able to make adding this logic easier. 
+
+- What did your chair pair do differently?
+I spent time researching how to add in a check_box to my forms. My chair pair used a button and I see in the notes below here. That despite the description, I could have used a button instead. Only needing to add a completed route vs creating an entirely new model to hold if the task is completed/has check_box.
+
+
+
+
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
