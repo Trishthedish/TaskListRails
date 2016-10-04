@@ -6,7 +6,7 @@
      <% if task[:status] == "complete"  %>
      <%= "✅" %>
      <% else  %>
-    <li><button><%=button_to "completed?", complete_path(task[:id]), method: :patch %></button></li>
+    <li><%=button_to "done? ✏️", complete_path(task[:id]), method: :patch %></li>
     <% end %>
   </ul>
 </article>
