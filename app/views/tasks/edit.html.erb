@@ -2,7 +2,7 @@
 <h1>Edit a post you must?</h1>
 <article>
 
-  <%=form_for @tasks, url: {controller: 'tasks', action: "edit"} do |t| %>
+  <%=form_for @tasks, url: update_path, method: :put do |t| %>
     <%= t.label :title %>
     <%= t.text_field :title %>
 
@@ -12,6 +12,17 @@
     <%= t.label :completed_at %>
     <%= t.text_field :completed_at %>
     <%= t.hidden_field :id %>
+
+    <%= t.label :status  %>
+    <%#the first: value, showing form?  %>
+    <%= t.select :status, [["complete", "complete"],["on going", "on_going"]] %>
+
+
+
+    <!-- #<select name="@tasks[status]" id="task_status">
+      <option value="complete">Complete</option>
+      <option value="on_going">On Going</option>
+    </select> -->
 
     <%= t.submit "Edit Task" %>
   <% end %>

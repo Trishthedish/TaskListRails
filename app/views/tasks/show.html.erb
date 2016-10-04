@@ -5,7 +5,8 @@
   <li>Task Id: <%=@mytask.id %></li>
   <li>Task Title: <%=@mytask.title%></li>
   <li>Task Description: <%=@mytask.description%></li>
-  <li>Completion Status: <%=@mytask.completed_at%></li>
+  <li>Completed_at: <%=@mytask.completed_at %></li>
+  <li>Completion Status: <%=@mytask.status%></li>
 </ul>
 <%= button_to "delete", delete_path(@mytask), {:method => :delete } %>
 <%= button_to "edit", edit_path(@mytask), {:method => :get}  %>

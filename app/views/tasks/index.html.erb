@@ -3,8 +3,11 @@
 <article>
   <ul>
     <li><%=link_to(task[:title], show_path(task[:id])) %></li>
-
-    <button><%=button_to()  %></button>
+     <% if task[:status] == "complete"  %>
+     <%= "✅" %>
+     <% else  %>
+    <li><button><%=button_to "completed?", complete_path(task[:id]), method: :patch %></button></li>
+    <% end %>
   </ul>
 </article>
 <% end %>

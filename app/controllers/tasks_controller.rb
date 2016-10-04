@@ -36,7 +36,7 @@ class TasksController < ApplicationController
 # this method was created && may not work.
   def update
     @mytask = Task.find(params[:id])
-    if @mytask.update({title: params[:task][:title], description: params[:task][:description], completed_at: params[:task][:completed_at]})
+    if @mytask.update({title: params[:task][:title], description: params[:task][:description], completed_at: params[:task][:completed_at], status: params[:task][:status]})
       # redirect_to(@mytask)}
       redirect_to tasks_path
     else
@@ -49,6 +49,14 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to root_path
     flash[:alert] = "task deleted"
+  end
+
+  def complete
+    self.edit
+    @tasks.status = "complete"
+    @tasks.completed_at = Time.now
+    @tasks.save
+    redirect_to tasks_path
   end
 
 

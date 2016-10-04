@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  post 'tasks/:id/edit' => 'tasks#update', as: 'update'
+  put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
   # patch 'tasks/:id/edit' => 'tasks#update', as: 'updates'
 
