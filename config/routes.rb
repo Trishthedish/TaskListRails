@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get "/auth/:provider/callback" =>  "sessions#create"
+
+  get 'sessions/create'
+
   root to: 'tasks#index'
 # changed this to index to tasks. NEEED FOLLOW UP!?
   get 'tasks/index' , as: 'tasks'
