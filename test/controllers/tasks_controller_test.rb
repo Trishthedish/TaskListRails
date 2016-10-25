@@ -13,7 +13,9 @@ test "make sure a user cannot see another user's tasks."
   session[:user_id] = users(:babbage).id
   get :show, id: tasks(:adas_task).id
 
-  assert_response :success 
+  assert_response :redirect
+  assert_eqaul flash[:notice], "You don't have access to that task"
+  
 end
 
 
