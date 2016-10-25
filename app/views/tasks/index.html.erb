@@ -11,7 +11,7 @@
   </ul>
 </article>
 <% end %>
-
+<%= link_to "Log in via Github", "/auth/github" %>
 <% if @user %>
 <h1>Welcome <%= @user.name %></h1>
 <p><%= image_tag @user.avatar %></p>
