@@ -3,12 +3,37 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+https://github.com/AdaGold/standalone-exercises/blob/master/tasklistrails-oauth.md
+
 Things you may want to cover:
 
 * Ruby version
 
 * System dependencies
 
+
+##
+
+
+
+## Project Learning Goals:
+  - Routes
+  - Controllers
+  - Models
+  - Views
+
+  [Heroku](http://heroku.com)
+- User based application logic
+- User authentication
+- Agile practices
+- Feature branch management with Git
+- Group project ownership
+
+## Guidelines
+- Groups of three or four will collaborate in pairs or individually and will report to their assigned Project Manager (one of the instructors)
+- Use a task manager like [Trello](http://trello.com) to track your team's efforts
+- Build a logical user-flow that moves across multiple controllers and models
+- Use HTML/CSS to style your websiteExercise Description
 * Configuration
 
 * Database creation

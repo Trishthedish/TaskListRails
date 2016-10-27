@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
     user.provider = 'github'
     user.name  = auth_hash['info']['name']
     user.email = auth_hash['info']['email']
-    # user.avatar = auth_hash['extra']['raw_info']["avatar_url"]
-    # user.followercount = auth_hash["extra"]['raw_info']['followers'].to_i
+    user.avatar = auth_hash['extra']['raw_info']["avatar_url"]
+    user.followercount = auth_hash["extra"]['raw_info']['followers'].to_i
     return user
   end
 end

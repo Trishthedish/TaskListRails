@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+    @user = get_current_user
   end
 
   def show
@@ -65,4 +66,9 @@ class TasksController < ApplicationController
       @user = User.find_by(id: session[:user_id])
     end
   end
+
+
+
+
+
 end

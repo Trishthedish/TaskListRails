@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'sessions/create'
 
+  get 'sessions/logout' => 'sessions#logout', as: 'logout'
+
   root to: 'tasks#index'
 # changed this to index to tasks. NEEED FOLLOW UP!?
   get 'tasks/index' , as: 'tasks'
